@@ -25,7 +25,7 @@ pipeline{
 
         stage("Docker Login"){
             steps{
-                sh 'echo $DOCKER_CREDENTIAL_PAS | docker login -u $DOCKER_CREDENTIAL_USR'
+                sh 'docker login -u $DOCKER_CREDENTIAL_USR -p $DOCKER_CREDENTIAL_PAS'
             }
         }
 
