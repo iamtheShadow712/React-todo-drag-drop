@@ -23,12 +23,6 @@ pipeline{
             }
         }
 
-        stage("Docker Login"){
-            steps{
-                sh 'docker login -u $DOCKER_CREDENTIAL_USR -p $DOCKER_CREDENTIAL_PAS'
-            }
-        }
-
         stage('Build Docker Image'){
             steps{
                 sh 'printenv'
