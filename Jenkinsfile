@@ -17,6 +17,12 @@ pipeline{
                 sh "npm audit --audit-level=critical"
             }
         }
+
+        stage('Build Docker Image'){
+            steps{
+                sh 'printenv'
+            }
+        }
     }
 
 }
