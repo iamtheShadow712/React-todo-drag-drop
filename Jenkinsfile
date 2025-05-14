@@ -25,16 +25,14 @@ pipeline{
 
         stage("Docker Login"){
             steps{
-                sh """
-                    echo "${DOCKER_CREDENTIAL_PAS}" | docker login -u "${DOCKER_CREDENTIAL_USR}" --password-stdin
-                """
+                sh 'echo $DOCKER_CREDENTIAL_PAS | docker login -u $DOCKER_CREDENTIAL_USR --password-stdin'
             }
         }
 
         stage('Build Docker Image'){
             steps{
                 sh 'printenv'
-                sh "docker build -t venom712/react-todo-app:${GIT_COMMIT} ."
+                sh 'docker build -t venom712/react-todo-app:$GIT_COMMIT .'
             }
         }
     }
