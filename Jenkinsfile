@@ -6,9 +6,15 @@ pipeline{
     }
 
     stages{
-        stage("Checking"){
+        stage('Install Dependency'){
             steps{
-                sh "echo 'Hello World'"
+                sh "npm install --no-audit"
+            }
+        }
+
+        stage('Audit Dependency'){
+            steps{
+                sh "npm audit --audit-level=critical"
             }
         }
     }
