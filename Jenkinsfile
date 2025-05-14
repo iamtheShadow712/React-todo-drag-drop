@@ -12,7 +12,7 @@ pipeline{
             }
         }
 
-        stage('Audit Dependency'){
+        stage('Audit Dependencies'){
             steps{
                 sh "npm audit --audit-level=critical"
             }
