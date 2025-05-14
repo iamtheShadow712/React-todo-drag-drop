@@ -26,7 +26,7 @@ pipeline{
         stage('Build Docker Image'){
             steps{
                 sh 'printenv'
-                sh 'docker build -t venom712/react-todo-app:$GIT_COMMIT .'
+                sh 'docker build -t venom712/todo-app:$GIT_COMMIT .'
             }
         }
     }
