@@ -70,6 +70,14 @@ pipeline{
                 }
             }
         }
+
+        stage('Push Image to Registry'){
+            steps{
+                withDockerRegistry(credentialsId: 'docker_credentials') {
+                    sh "docker push venom712/todo-app:$GIT_COMMIT"
+                }
+            }
+        }
     }
 
     post{
