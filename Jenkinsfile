@@ -36,14 +36,14 @@ pipeline{
                     --severity LOW,MEDIUM \
                     --exit-code 0 \
                     --quiet \
-                    --format json 
+                    --format json \
                     -o trivy-image-MEDIUM-results.json
                     
                     trivy image venom712/todo-app:$GIT_COMMIT \
                     --severity HIGH,CRITICAL \
                     --exit-code 1 \
                     --quiet \
-                    --format json 
+                    --format json \
                     -o trivy-image-CRITICAL-results.json
                 '''
             }
